@@ -1,0 +1,7 @@
+#Tail Recursion
+def fun(n):
+    if n>0:
+        k = n*n
+        print(k)
+        fun(n-1)
+fun(5)

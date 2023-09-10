@@ -1,0 +1,22 @@
+def countsort(A):
+    Max = max(A)
+    binary = [0]*(Max+1)
+    
+    for a in range(len(A)):
+        binary[A[a]] = binary[A[a]] + 1
+    
+    i = 0
+    j = 0
+    while i<Max+1:
+        if binary[i]>0:
+            A[j]=i
+            j=j+1
+            binary[i] -= 1
+        else:
+            i += 1
+    
+
+A = [3, 5, 8, 9, 6, 2]
+print('Original Array:',A)
+countsort(A)
+print('Sorted Array:',A)

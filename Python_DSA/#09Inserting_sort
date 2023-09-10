@@ -1,0 +1,15 @@
+#inserting Sorting
+def sort(A):
+    n = len(A)
+    for i in range(1, n-1):
+        pos = i
+        avalue = A[i]
+        while pos>0 and A[pos-1]>avalue:
+            A[pos] = A[pos-1]
+            pos = pos -1
+        A[pos]= avalue
+
+A =[2,5,3,8,6,5]
+print("ORIGINAL: ", A)
+sort(A)
+print("SORTED ARRAY: ", A)

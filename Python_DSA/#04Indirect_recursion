@@ -1,0 +1,16 @@
+#Indirect Recursion
+def calculateA(n):
+    if n > 0:
+        k = n*n
+        calculateB(n - 1)
+        print(k)
+
+
+def calculateB(n):
+    if n > 0:
+        k = n*n
+        calculateA(n - 1)
+        print(k)
+
+calculateA(4)
+

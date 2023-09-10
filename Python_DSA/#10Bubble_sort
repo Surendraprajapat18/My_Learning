@@ -1,0 +1,11 @@
+def sort(A):
+    n = len(A)
+    for i in range(n-1, 0, -1):
+        for j in range(n-1):
+            if A[j]>A[j+1]:
+                 A[j], A[j+1] = A[j+1], A[j]
+       
+A =[2,5,3,8,6,5]
+print("ORIGINAL: ", A)
+sort(A)
+print("SORTED ARRAY: ", A)
