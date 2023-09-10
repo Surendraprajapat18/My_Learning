@@ -1,0 +1,18 @@
+class Solution:
+    def lexicographicallySmallest (ob, S, k):
+        # code here 
+        n = len(S)
+        k = k//2 if (n&n-1) == 0 else k*2
+        
+        if k >= n:
+            return -1
+        if k == 0:
+            return S
+        lexi = []
+        for e in S:
+            while lexi and lexi[-1] > e and k > 0:
+                lexi.pop()
+                k -= 1
+            lexi.append(e)
+        lexi = lexi[ : len(lexi) - k]
+        return ''.join(lexi)

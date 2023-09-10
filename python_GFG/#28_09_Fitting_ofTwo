@@ -1,0 +1,13 @@
+class Solution:
+    def isFit (self,arr, brr, n) : 
+        #Complete the function
+        arr.sort()
+        brr.sort()
+        ans = ""
+        for i in range(n):
+            if arr[i]<=brr[i]:
+                ans = True
+            else:
+                ans = False
+                break
+        return ans

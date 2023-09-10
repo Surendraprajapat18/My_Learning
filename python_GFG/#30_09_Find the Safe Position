@@ -1,0 +1,8 @@
+class Solution:
+    def safePos(self, n, k):
+        # code here 
+        if n==1:
+            return 1
+        c = self.safePos(n-1, k)
+        return (c+k-1)%n+1
+            

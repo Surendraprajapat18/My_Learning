@@ -1,0 +1,20 @@
+from collections import *
+class Solution:
+    def minChar(self,str):
+        #Write your code here
+        lenstr = len(str)
+        i = 0
+        j = lenstr -1
+        posi = lenstr - 1
+        
+        while i<j:
+            if str[i] == str[j]:
+                i+=1
+                j-=1
+            else:
+                i = 0
+                posi -= 1
+                j = posi
+        return (lenstr-posi-1)
+        
+            

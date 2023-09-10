@@ -1,0 +1,10 @@
+class Solution:
+    def swapBitGame (self,N):
+        # code here 
+        b = bin(N)
+        b1 = b[2:]
+        one = b1.count("1")
+        zero = b1.count("0")
+        if one%2==0:
+            return 2
+        return 1

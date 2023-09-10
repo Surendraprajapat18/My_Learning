@@ -1,0 +1,8 @@
+from math import factorial
+
+class Solution:
+    def ncr(self,n,r):
+        return factorial(n) // factorial(r) // factorial(n-r)
+        
+	def numberOfPaths(self, m, n):
+		return self.ncr(m+n-2,n-1) %(10**9 +7 )

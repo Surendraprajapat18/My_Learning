@@ -1,0 +1,27 @@
+import sys
+from typing import List
+from operator import sub
+class Solution:
+    sys.setrecursionlimit(10**8)
+    def countDistinctIslands(self, grid : List[List[int]]) -> int:
+        
+        n,m= len(grid),len(grid[0])
+        
+        def explo(x,y,ox,oy,path):
+            if x == n or x < 0 or y == m or y < 0 or grid[x][y] != 1:
+                return
+            path.append((x-ox,y-oy))
+            grid[x][y] = - 1
+            explo(x+1,y,ox,oy,path)
+            explo(x-1,y,ox,oy,path)
+            explo(x,y+1,ox,oy,path)
+            explo(x,y-1,ox,oy,path)
+            
+        uniq_is = set()
+        for x in range(n):
+            for y in range(m):
+                if grid[x][y] == 1:
+                    path = []
+                    explo(x,y,x,y,path)
+                    uniq_is.add(tuple(path))
+        return len(uniq_is)
