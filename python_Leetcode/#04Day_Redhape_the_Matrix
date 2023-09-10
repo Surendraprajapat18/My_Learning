@@ -1,0 +1,9 @@
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        
+        ans = [item for sublist in mat for item in sublist]
+        if r * c != len(ans): 
+            return mat    
+        output = [ans[(row *c) :c * (row +1)] for row in range(r)]
+        return output
+        

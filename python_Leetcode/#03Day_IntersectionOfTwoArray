@@ -1,0 +1,13 @@
+import collections
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+
+        d = collections.Counter(nums1)
+        ans = []
+        
+        for num in nums2:
+            if d[num] > 0:
+                d[num] -= 1
+                ans.append(num)
+                
+        return ans

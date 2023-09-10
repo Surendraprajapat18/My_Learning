@@ -1,0 +1,8 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        a = Counter(s)
+        for c, count in a.items():
+            if count == 1:
+                idx = s.find(c)
+                return idx
+        return -1
